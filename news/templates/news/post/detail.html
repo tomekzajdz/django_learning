@@ -1,0 +1,18 @@
+{% extends "news/base.html" %}
+
+{% block title %} {{post.title}} {% endblock %}
+{% block content%}
+    <h1> {{post.title}}</h1>
+    <p class = date>{{post.publish}}</p>
+    <p>{{post.body}}</p>
+    <hr>
+    {% for comment in post.comment.all %}
+        <div class="comment">
+            <div class="date">{{comment.created_date}}</div>
+            <strong>{{comment.author}}</strong>
+            <p> {{comment.text|linebreaks}} </p>
+        </div>
+        {% empty %}
+        <div class="comment"> Na razie nikt nie dodał komentarza </div>
+    {% endfor %}
+{% endblock %}

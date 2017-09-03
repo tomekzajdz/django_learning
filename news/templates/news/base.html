@@ -1,0 +1,21 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %} {% endblock %}</title>
+    <link href="{% static "css/news.css" %}" rel="stylesheet">
+</head>
+<body>
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div id="sidebar">
+        <h2>Mój blog</h2>
+          <p>To mój pierwszy blog</p>
+    </div>
+    <div id="footer">
+        <p>QAtastrofa 2017</p>
+    </div>
+</body>
+</html>
